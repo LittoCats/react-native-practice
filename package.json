@@ -1,0 +1,44 @@
+{
+  "name": "Aicorn",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "start": "react-native start",
+    "test": "jest"
+  },
+  "dependencies": {
+    "react": "16.9.0",
+    "react-native": "0.61.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.2",
+    "@babel/runtime": "^7.6.2",
+    "@react-native-community/art": "^1.0.2",
+    "@react-native-community/eslint-config": "^0.0.5",
+    "@types/jest": "^24.0.18",
+    "@types/react-native": "^0.60.21",
+    "@types/react-test-renderer": "16.9.0",
+    "acorn": "^7.1.0",
+    "babel-jest": "^24.9.0",
+    "dotenv": "^8.2.0",
+    "eslint": "^5.16.0",
+    "jest": "^24.9.0",
+    "js-yaml": "^3.13.1",
+    "metro-react-native-babel-preset": "^0.56.0",
+    "react-test-renderer": "16.9.0",
+    "typescript": "^3.6.3"
+  },
+  "jest": {
+    "preset": "react-native",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  }
+}
