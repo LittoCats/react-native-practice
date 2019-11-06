@@ -3,7 +3,7 @@
  *  @Email     littocats@gmail.com
  *
  *  @Created   2019-11-02 16:25:56
- *  @Modified  2019-11-03 13:07:38
+ *  @Modified  2019-11-05 22:32:01
  *
  *  Copyright (C) 2019 AICORN.CN <developer@aicorn.cn>
  *
@@ -18,7 +18,7 @@
  */
 
 import React from 'react';
-import { View, StyleSheet, Animated } from 'react-native';
+import { StyleSheet, Animated, ViewStyle, RegisteredStyle } from 'react-native';
 
 import { Surface, Shape, Path } from './art';
 
@@ -84,11 +84,20 @@ const Animation: {value: Animated.Value, effect: ()=> ()=> void} = (function() {
   return {value, effect: start};
 })();
 
+const styles = StyleSheet.create({
+  spinner: {
+    alignContent: 'center',
+    justifyContent: 'center',
+    alignItems: 'center'
+  }
+});
+
+type Style = ViewStyle | StyleSheet.AbsoluteFillStyle;
 
 interface Spinner {
   color?: string;
   size?: number;
-  style?: any
+  style?:  Style | RegisteredStyle<Style>;
 }
 
 export default function Spinner(props: Spinner) {
@@ -96,13 +105,11 @@ export default function Spinner(props: Spinner) {
 
   const width = size || DEFAULT_SIZE;
   const sideStyle = {
-    width: width,
-    height: width,
     transform: [{rotateZ: Animation.value}, {perspective: 1000}]
   };
   React.useEffect(()=> Animation.effect(), []);
 
-  return <Animated.View {...rest} style={[style, sideStyle]}>
+  return <Animated.View {...rest} style={[styles.spinner, style, sideStyle]}>
     <Surface width={width} height={width} >{PATHS.map((path, index)=>
       <Shape key={index} strokeWidth={PINNER_WIDTH} strokeCap="round" strokeJoin="round"
         stroke={props.color || DEFAULT_COLOR}
