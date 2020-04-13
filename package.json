@@ -20,7 +20,7 @@
     "@types/jest": "^24.0.18",
     "@types/react-native": "^0.60.21",
     "@types/react-test-renderer": "16.9.0",
-    "acorn": "^7.1.0",
+    "acorn": "^7.1.1",
     "babel-jest": "^24.9.0",
     "dotenv": "^8.2.0",
     "eslint": "^5.16.0",
